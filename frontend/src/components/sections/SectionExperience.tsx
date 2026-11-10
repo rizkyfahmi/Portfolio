@@ -397,7 +397,7 @@ export function SectionExperience({ profile }: SectionExperienceProps) {
                             opacity: { duration: 1.5, delay: 0.3, ease: [0.16, 1, 0.3, 1] },
                             scale: { duration: 1.5, delay: 0.3, ease: [0.16, 1, 0.3, 1] },
                           }}
-                          className="absolute -top-8 -right-4 sm:-top-11 sm:-right-6 lg:-top-12 lg:-right-7 z-30 cursor-pointer select-none"
+                          className="absolute -top-[82px] -right-4 sm:-top-[94px] sm:-right-6 lg:-top-[98px] lg:-right-7 z-30 cursor-pointer select-none"
                           title="Independent Learning"
                         >
                           <img
