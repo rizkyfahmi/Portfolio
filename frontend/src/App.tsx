@@ -1,6 +1,5 @@
 import { Route, Routes, useLocation } from 'react-router-dom'
 import { AnimatePresence, motion } from 'framer-motion'
-import { Navbar } from '@/components/layout/Navbar'
 import { Home } from '@/pages/Home'
 import { NotFound } from '@/pages/NotFound'
 import { usePortfolio } from '@/hooks/usePortfolio'
@@ -11,9 +10,6 @@ export default function App() {
 
   return (
     <div className="relative min-h-screen bg-[#f5f5f7] text-slate-900 selection:bg-slate-200 selection:text-slate-950">
-      {/* Sticky Fixed Navbar at Top of Screen */}
-      <Navbar />
-
       <AnimatePresence mode="wait">
         <motion.div
           key={location.pathname}
