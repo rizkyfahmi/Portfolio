@@ -52,7 +52,7 @@ export function SectionAbout({ profile }: SectionAboutProps) {
             className="shrink-0 relative overflow-hidden self-stretch flex items-stretch justify-center bg-slate-900 m-2 sm:m-2.5 lg:m-3 rounded-[20px] sm:rounded-[28px] lg:rounded-[34px] border border-slate-300/80 shadow-[0_12px_28px_-10px_rgba(15,23,42,0.12)] max-h-[260px] lg:max-h-none"
           >
             <img
-              src="/images/about-photo.jpg?v=3"
+              src="/images/about-photo.jpg?v=4"
               alt={profile.name}
               className="h-full w-auto aspect-[2/3] object-cover object-top select-none pointer-events-none rounded-[20px] sm:rounded-[28px] lg:rounded-[34px]"
             />
