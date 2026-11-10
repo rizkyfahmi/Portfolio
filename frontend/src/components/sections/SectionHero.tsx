@@ -5,6 +5,10 @@ import type { Profile } from '@/types'
 
 const heroSlides = [
   {
+    src: '/images/hero-portrait.png?v=9',
+    alt: 'Rizky Fahmi standing with laptop in black suit',
+  },
+  {
     src: '/images/hero-slide-1.png?v=1',
     alt: 'Rizky Fahmi working on laptop',
   },
@@ -28,7 +32,7 @@ export function SectionHero({ profile }: SectionHeroProps) {
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % heroSlides.length)
-    }, 4500)
+    }, 6500)
 
     return () => clearInterval(timer)
   }, [])
@@ -150,10 +154,10 @@ export function SectionHero({ profile }: SectionHeroProps) {
               <AnimatePresence initial={false} mode="popLayout">
                 <motion.div
                   key={currentSlide}
-                  initial={{ opacity: 0, x: 140, scale: 0.95 }}
+                  initial={{ opacity: 0, x: 160, scale: 0.95 }}
                   animate={{ opacity: 1, x: 0, scale: 1 }}
-                  exit={{ opacity: 0, x: -140, scale: 0.95 }}
-                  transition={{ duration: 0.95, ease: [0.16, 1, 0.3, 1] }}
+                  exit={{ opacity: 0, x: -160, scale: 0.95 }}
+                  transition={{ duration: 1.5, ease: [0.16, 1, 0.3, 1] }}
                   className="w-full h-full flex items-end justify-center leading-none"
                 >
                   <img
