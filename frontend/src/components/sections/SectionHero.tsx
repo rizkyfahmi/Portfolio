@@ -21,10 +21,10 @@ export function SectionHero({ profile }: SectionHeroProps) {
         
         {/* Main Card Container matching Home Hero Dimensions & Squircles */}
         <motion.div
-          initial={{ opacity: 0, scale: 0.93, y: -25 }}
+          initial={{ opacity: 0, scale: 0.94, y: -20 }}
           whileInView={{ opacity: 1, scale: 1, y: 0 }}
           viewport={{ once: false, amount: 0.2 }}
-          transition={{ duration: 1.15, ease: [0.22, 1, 0.36, 1] }}
+          transition={{ duration: 0.75, ease: [0.22, 1, 0.36, 1] }}
           className="group relative w-full rounded-[32px] sm:rounded-[44px] lg:rounded-[52px] bg-gradient-to-r from-[#edeff2] via-[#e5e8ee] to-[#cdd0d5] border border-slate-300/70 shadow-[0_25px_60px_-15px_rgba(15,23,42,0.08),0_10px_25px_-5px_rgba(15,23,42,0.04)] grid grid-cols-1 lg:grid-cols-12 items-stretch overflow-visible min-h-[460px] lg:min-h-[500px]"
         >
           
@@ -32,12 +32,12 @@ export function SectionHero({ profile }: SectionHeroProps) {
           <div className="lg:col-span-7 p-8 sm:p-12 lg:p-16 flex flex-col justify-center my-auto z-10">
             
             <div className="space-y-6">
-              {/* Two-Tone Big Headline: Slides from top-left with blur resolve */}
+              {/* Two-Tone Big Headline: Slides from top-left with blur resolve (Slower & Cinematic) */}
               <motion.div
-                initial={{ opacity: 0, x: -35, filter: 'blur(6px)' }}
+                initial={{ opacity: 0, x: -35, filter: 'blur(8px)' }}
                 whileInView={{ opacity: 1, x: 0, filter: 'blur(0px)' }}
                 viewport={{ once: false }}
-                transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
+                transition={{ duration: 1.5, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
               >
                 <h1
                   id="hero-title"
@@ -50,24 +50,24 @@ export function SectionHero({ profile }: SectionHeroProps) {
                 </span>
               </motion.div>
 
-              {/* Description: Ascends from below with gentle delay */}
+              {/* Description: Ascends from below with gentle delay (Slower & Flowing) */}
               <motion.p
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 28 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: false }}
-                transition={{ duration: 1.0, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
+                transition={{ duration: 1.7, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
                 className="text-xs sm:text-sm lg:text-base leading-relaxed text-slate-600 max-w-lg text-pretty"
               >
                 {profile.intro ||
                   'I am a Full-Stack Developer passionate about web engineering and modern technologies. I love turning ideas into real-world projects, crafting clean interfaces, and building resilient systems through continuous learning and exploration.'}
               </motion.p>
 
-              {/* Action Buttons: Staggered pop */}
+              {/* Action Buttons: Staggered pop (Slower & Elegant) */}
               <motion.div
-                initial={{ opacity: 0, y: 15 }}
+                initial={{ opacity: 0, y: 22 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: false }}
-                transition={{ duration: 0.9, delay: 0.25, ease: [0.22, 1, 0.36, 1] }}
+                transition={{ duration: 1.6, delay: 0.45, ease: [0.16, 1, 0.3, 1] }}
                 className="pt-2 flex flex-wrap items-center gap-3.5"
               >
                 <button
@@ -90,9 +90,15 @@ export function SectionHero({ profile }: SectionHeroProps) {
             </div>
           </div>
 
-          {/* Right Column: Portrait resting directly on the bottom line of the card with continuous idle animation */}
+          {/* Right Column: Portrait Photo with Entrance Animation (Slower than Card) + Continuous Idle Loop */}
           <div className="lg:col-span-5 relative flex items-end justify-center self-end overflow-visible leading-none h-full">
-            <div className="relative z-10 w-full flex justify-center items-end leading-none">
+            <motion.div
+              initial={{ opacity: 0, y: 45, scale: 0.94 }}
+              whileInView={{ opacity: 1, y: 0, scale: 1 }}
+              viewport={{ once: false }}
+              transition={{ duration: 1.7, delay: 0.22, ease: [0.16, 1, 0.3, 1] }}
+              className="relative z-10 w-full flex justify-center items-end leading-none"
+            >
               <motion.img
                 src="/images/hero-portrait.png?v=8"
                 alt={profile.name}
@@ -108,7 +114,7 @@ export function SectionHero({ profile }: SectionHeroProps) {
                 style={{ transformOrigin: 'bottom center' }}
                 className="block w-full max-w-[360px] sm:max-w-[420px] lg:max-w-[465px] h-auto object-contain object-bottom align-bottom filter contrast-[1.03] drop-shadow-[0_15px_30px_rgba(0,0,0,0.12)] select-none pointer-events-none"
               />
-            </div>
+            </motion.div>
           </div>
 
         </motion.div>
