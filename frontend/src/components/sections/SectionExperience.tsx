@@ -350,29 +350,6 @@ export function SectionExperience({ profile }: SectionExperienceProps) {
                         </div>
                       ))}
                     </div>
-
-                    {/* Sticker: Pumped / Determined from SS (shifted to the right & scaled up 40%) */}
-                    <div className="pt-2 flex justify-end mt-[20px] pr-2 sm:pr-8 max-w-3xl">
-                      <motion.div
-                        initial={{ opacity: 0, scale: 0.5, rotate: 12 }}
-                        whileInView={{ opacity: 1, scale: 1, rotate: 6 }}
-                        whileHover={{ scale: 1.15, rotate: 0 }}
-                        animate={{ y: [0, -6, 0] }}
-                        transition={{
-                          y: { duration: 4.2, repeat: Infinity, ease: 'easeInOut' },
-                          opacity: { duration: 1.5, delay: 0.4, ease: [0.16, 1, 0.3, 1] },
-                          scale: { duration: 1.5, delay: 0.4, ease: [0.16, 1, 0.3, 1] },
-                        }}
-                        className="cursor-pointer select-none"
-                        title="Pumped and excited for new challenges"
-                      >
-                        <img
-                          src="/images/sticker-pumped.png"
-                          alt="Pumped coding mascot sticker"
-                          className="w-26 sm:w-32 lg:w-36 h-auto drop-shadow-[0_16px_32px_rgba(0,0,0,0.18)] pointer-events-none"
-                        />
-                      </motion.div>
-                    </div>
                   </div>
                 </div>
               </motion.div>
@@ -397,28 +374,54 @@ export function SectionExperience({ profile }: SectionExperienceProps) {
               </h3>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
-                {educationList.map((edu, idx) => (
-                  <motion.div
-                    key={edu.title}
-                    initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: false, amount: 0.2 }}
-                    transition={{ duration: 1.1, delay: idx * 0.1, ease: [0.22, 1, 0.36, 1] }}
-                    className="space-y-1.5 bg-slate-50/70 hover:bg-slate-50 rounded-2xl p-6 border border-slate-200/80 hover:border-slate-300 transition-colors"
-                  >
-                    <h4 className="text-base font-bold text-slate-900 leading-snug">
-                      {edu.title}
-                    </h4>
-                    {edu.period && (
-                      <p className="text-xs text-slate-400 font-normal">
-                        {edu.period}
+                {educationList.map((edu, idx) => {
+                  const isIndependent = edu.title === 'Independent Learning'
+                  return (
+                    <motion.div
+                      key={edu.title}
+                      initial={{ opacity: 0, y: 30 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: false, amount: 0.2 }}
+                      transition={{ duration: 1.1, delay: idx * 0.1, ease: [0.22, 1, 0.36, 1] }}
+                      className="relative space-y-1.5 bg-slate-50/70 hover:bg-slate-50 rounded-2xl p-6 border border-slate-200/80 hover:border-slate-300 transition-colors overflow-visible"
+                    >
+                      {/* Mascot Sticker: Pumped / Determined on Top-Right Corner (Half inside, half outside) */}
+                      {isIndependent && (
+                        <motion.div
+                          initial={{ opacity: 0, scale: 0.5, rotate: 12 }}
+                          whileInView={{ opacity: 1, scale: 1, rotate: 6 }}
+                          whileHover={{ scale: 1.15, rotate: 0 }}
+                          animate={{ y: [0, -6, 0] }}
+                          transition={{
+                            y: { duration: 4.2, repeat: Infinity, ease: 'easeInOut' },
+                            opacity: { duration: 1.5, delay: 0.3, ease: [0.16, 1, 0.3, 1] },
+                            scale: { duration: 1.5, delay: 0.3, ease: [0.16, 1, 0.3, 1] },
+                          }}
+                          className="absolute -top-8 -right-4 sm:-top-11 sm:-right-6 lg:-top-12 lg:-right-7 z-30 cursor-pointer select-none"
+                          title="Independent Learning"
+                        >
+                          <img
+                            src="/images/sticker-pumped.png"
+                            alt="Pumped coding mascot sticker"
+                            className="w-22 sm:w-26 lg:w-28 h-auto drop-shadow-[0_14px_28px_rgba(0,0,0,0.18)] pointer-events-none"
+                          />
+                        </motion.div>
+                      )}
+
+                      <h4 className="text-base font-bold text-slate-900 leading-snug">
+                        {edu.title}
+                      </h4>
+                      {edu.period && (
+                        <p className="text-xs text-slate-400 font-normal">
+                          {edu.period}
+                        </p>
+                      )}
+                      <p className="text-xs sm:text-sm text-slate-600 leading-relaxed pt-1">
+                        {edu.desc}
                       </p>
-                    )}
-                    <p className="text-xs sm:text-sm text-slate-600 leading-relaxed pt-1">
-                      {edu.desc}
-                    </p>
-                  </motion.div>
-                ))}
+                    </motion.div>
+                  )
+                })}
               </div>
             </motion.div>
 
