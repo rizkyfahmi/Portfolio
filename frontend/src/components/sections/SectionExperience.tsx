@@ -351,8 +351,8 @@ export function SectionExperience({ profile }: SectionExperienceProps) {
                       ))}
                     </div>
 
-                    {/* Sticker: Pumped / Determined from SS placed at Bottom-Left of this section (shifted another 50% right & down 20px) */}
-                    <div className="pt-2 flex justify-start ml-[70%] sm:ml-[78%] mt-[20px] max-w-3xl">
+                    {/* Sticker: Pumped / Determined from SS (shifted to the right & scaled up 40%) */}
+                    <div className="pt-2 flex justify-end mt-[20px] pr-2 sm:pr-8 max-w-3xl">
                       <motion.div
                         initial={{ opacity: 0, scale: 0.5, rotate: 12 }}
                         whileInView={{ opacity: 1, scale: 1, rotate: 6 }}
@@ -369,7 +369,7 @@ export function SectionExperience({ profile }: SectionExperienceProps) {
                         <img
                           src="/images/sticker-pumped.png"
                           alt="Pumped coding mascot sticker"
-                          className="w-18 sm:w-22 lg:w-24 h-auto drop-shadow-[0_12px_24px_rgba(0,0,0,0.16)] pointer-events-none"
+                          className="w-26 sm:w-32 lg:w-36 h-auto drop-shadow-[0_16px_32px_rgba(0,0,0,0.18)] pointer-events-none"
                         />
                       </motion.div>
                     </div>
