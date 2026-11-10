@@ -137,7 +137,7 @@ export function SectionExperience({ profile }: SectionExperienceProps) {
             />
           </motion.div>
 
-          {/* Sticker 3: Pumped / Determined at Middle-Right Edge (Half inside, half outside) */}
+          {/* Sticker 3: Pumped / Determined at Middle-Right Edge */}
           <motion.div
             initial={{ opacity: 0, scale: 0.5, rotate: 12 }}
             whileInView={{ opacity: 1, scale: 1, rotate: 6 }}
@@ -148,13 +148,13 @@ export function SectionExperience({ profile }: SectionExperienceProps) {
               opacity: { duration: 1.5, delay: 0.6, ease: [0.16, 1, 0.3, 1] },
               scale: { duration: 1.5, delay: 0.6, ease: [0.16, 1, 0.3, 1] },
             }}
-            className="hidden sm:block absolute top-[44%] -translate-y-1/2 -right-4 sm:-right-8 lg:-right-10 z-30 cursor-pointer select-none"
+            className="hidden sm:block absolute top-[44%] -translate-y-1/2 right-2 sm:right-4 lg:-right-3 z-30 cursor-pointer select-none"
             title="Pumped and excited for new challenges"
           >
             <img
               src="/images/sticker-pumped.png"
               alt="Pumped coding mascot sticker"
-              className="w-18 sm:w-22 lg:w-26 h-auto drop-shadow-[0_15px_30px_rgba(0,0,0,0.18)] pointer-events-none"
+              className="w-18 sm:w-22 lg:w-26 h-auto drop-shadow-[0_12px_24px_rgba(0,0,0,0.16)] pointer-events-none"
             />
           </motion.div>
 
