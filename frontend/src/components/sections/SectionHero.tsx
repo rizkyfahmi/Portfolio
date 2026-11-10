@@ -1,12 +1,38 @@
-import { motion } from 'framer-motion'
+import { useState, useEffect } from 'react'
+import { motion, AnimatePresence } from 'framer-motion'
 import { ArrowRight } from 'lucide-react'
 import type { Profile } from '@/types'
+
+const heroSlides = [
+  {
+    src: '/images/hero-slide-1.png?v=1',
+    alt: 'Rizky Fahmi working on laptop',
+  },
+  {
+    src: '/images/hero-slide-2.png?v=1',
+    alt: 'Rizky Fahmi walking in black suit with phone',
+  },
+  {
+    src: '/images/hero-slide-3.png?v=1',
+    alt: 'Rizky Fahmi in black shirt with glasses',
+  },
+]
 
 interface SectionHeroProps {
   profile: Profile
 }
 
 export function SectionHero({ profile }: SectionHeroProps) {
+  const [currentSlide, setCurrentSlide] = useState(0)
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % heroSlides.length)
+    }, 4500)
+
+    return () => clearInterval(timer)
+  }, [])
+
   const scrollTo = (id: string) => {
     document.getElementById(id)?.scrollIntoView({ behavior: 'smooth', block: 'start' })
   }
@@ -118,31 +144,43 @@ export function SectionHero({ profile }: SectionHeroProps) {
             </div>
           </div>
 
-          {/* Right Column: Portrait Photo enters from Right with subtle scale (Crisp, No Blur) + Continuous Idle Loop */}
-          <div className="lg:col-span-5 relative flex items-end justify-center self-end overflow-visible leading-none h-full">
-            <motion.div
-              initial={{ opacity: 0, x: 80, scale: 0.9 }}
-              whileInView={{ opacity: 1, x: 0, scale: 1 }}
-              viewport={{ once: false }}
-              transition={{ duration: 2.6, delay: 0.25, ease: [0.16, 1, 0.3, 1] }}
-              className="relative z-10 w-full flex justify-center items-end leading-none"
-            >
-              <motion.img
-                src="/images/hero-portrait.png?v=9"
-                alt={profile.name}
-                animate={{
-                  scale: [1.05, 1.075, 1.05],
-                  rotate: [0, 0.6, 0, -0.6, 0],
-                }}
-                transition={{
-                  duration: 6,
-                  repeat: Infinity,
-                  ease: 'easeInOut',
-                }}
-                style={{ transformOrigin: 'bottom center' }}
-                className="block w-full max-w-[360px] sm:max-w-[420px] lg:max-w-[465px] h-auto object-contain object-bottom align-bottom filter contrast-[1.03] drop-shadow-[0_15px_30px_rgba(0,0,0,0.12)] select-none pointer-events-none"
-              />
-            </motion.div>
+          {/* Right Column: Automatic Carousel Slide Moving Right to Left */}
+          <div className="lg:col-span-5 relative flex items-end justify-center self-end overflow-hidden leading-none h-[420px] sm:h-[480px] lg:h-full min-h-[420px] rounded-b-[32px] sm:rounded-b-[44px] lg:rounded-b-none lg:rounded-r-[52px]">
+            <div className="relative w-full h-full flex items-end justify-center overflow-hidden">
+              <AnimatePresence initial={false} mode="popLayout">
+                <motion.div
+                  key={currentSlide}
+                  initial={{ opacity: 0, x: 140, scale: 0.95 }}
+                  animate={{ opacity: 1, x: 0, scale: 1 }}
+                  exit={{ opacity: 0, x: -140, scale: 0.95 }}
+                  transition={{ duration: 0.95, ease: [0.16, 1, 0.3, 1] }}
+                  className="w-full h-full flex items-end justify-center leading-none"
+                >
+                  <img
+                    src={heroSlides[currentSlide].src}
+                    alt={heroSlides[currentSlide].alt}
+                    className="block w-full max-w-[360px] sm:max-w-[420px] lg:max-w-[465px] h-auto object-contain object-bottom align-bottom filter contrast-[1.03] drop-shadow-[0_15px_30px_rgba(0,0,0,0.12)] select-none pointer-events-none"
+                  />
+                </motion.div>
+              </AnimatePresence>
+
+              {/* Subtle Slide Indicators */}
+              <div className="absolute bottom-3 sm:bottom-4 z-20 flex items-center gap-1.5 bg-black/20 backdrop-blur-md px-3 py-1.5 rounded-full border border-white/20">
+                {heroSlides.map((_, idx) => (
+                  <button
+                    key={idx}
+                    type="button"
+                    onClick={() => setCurrentSlide(idx)}
+                    aria-label={`Slide ${idx + 1}`}
+                    className={`transition-all duration-300 rounded-full h-1.5 cursor-pointer ${
+                      idx === currentSlide
+                        ? 'w-5 bg-white shadow-xs'
+                        : 'w-1.5 bg-white/50 hover:bg-white/80'
+                    }`}
+                  />
+                ))}
+              </div>
+            </div>
           </div>
 
         </motion.div>
