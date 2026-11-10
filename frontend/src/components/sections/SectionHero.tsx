@@ -32,50 +32,50 @@ export function SectionHero({ profile }: SectionHeroProps) {
           <div className="lg:col-span-7 p-8 sm:p-12 lg:p-16 flex flex-col justify-center my-auto z-10">
             
             <div className="space-y-6">
-              {/* Two-Tone Big Headline: Separately choreographed and slowed down for cinematic impact */}
+              {/* Title: Part 1 slides from Left, Part 2 drops from Top (Crisp, No Blur) */}
               <div>
                 <motion.h1
                   id="hero-title"
-                  initial={{ opacity: 0, x: -65, filter: 'blur(14px)' }}
-                  whileInView={{ opacity: 1, x: 0, filter: 'blur(0px)' }}
+                  initial={{ opacity: 0, x: -80 }}
+                  whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: false }}
-                  transition={{ duration: 2.5, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
+                  transition={{ duration: 2.3, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
                   className="text-3xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-slate-900 leading-[1.08] text-balance font-sans"
                 >
                   Rizky Fahmi
                 </motion.h1>
                 <motion.span
-                  initial={{ opacity: 0, y: 35, scale: 0.96, filter: 'blur(10px)' }}
-                  whileInView={{ opacity: 1, y: 0, scale: 1, filter: 'blur(0px)' }}
+                  initial={{ opacity: 0, y: -26 }}
+                  whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: false }}
-                  transition={{ duration: 2.7, delay: 0.35, ease: [0.16, 1, 0.3, 1] }}
+                  transition={{ duration: 2.3, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
                   className="block text-3xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-slate-400 leading-[1.08] text-balance mt-1.5 font-sans"
                 >
                   Fullstack Developer.
                 </motion.span>
               </div>
 
-              {/* Description: Gentle upward drift with soft focus resolve (Much slower) */}
+              {/* Description: Glides up from Bottom (Crisp, No Blur) */}
               <motion.p
-                initial={{ opacity: 0, y: 40, filter: 'blur(6px)' }}
-                whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+                initial={{ opacity: 0, y: 45 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: false }}
-                transition={{ duration: 2.8, delay: 0.55, ease: [0.16, 1, 0.3, 1] }}
+                transition={{ duration: 2.6, delay: 0.5, ease: [0.16, 1, 0.3, 1] }}
                 className="text-xs sm:text-sm lg:text-base leading-relaxed text-slate-600 max-w-lg text-pretty"
               >
                 {profile.intro ||
                   'I am a Full-Stack Developer passionate about web engineering and modern technologies. I love turning ideas into real-world projects, crafting clean interfaces, and building resilient systems through continuous learning and exploration.'}
               </motion.p>
 
-              {/* Action Buttons: Staggered slow pop & rise from below */}
+              {/* Action Buttons: Pops in from Center via Scale (Crisp, No Blur) */}
               <div className="pt-2 flex flex-wrap items-center gap-3.5">
                 <motion.button
                   type="button"
                   onClick={() => scrollTo('portfolio')}
-                  initial={{ opacity: 0, y: 35, scale: 0.92 }}
-                  whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                  initial={{ opacity: 0, scale: 0.65 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: false }}
-                  transition={{ duration: 2.4, delay: 0.75, ease: [0.16, 1, 0.3, 1] }}
+                  transition={{ duration: 2.0, delay: 0.75, ease: [0.16, 1, 0.3, 1] }}
                   className="inline-flex items-center gap-2 rounded-xl bg-slate-950 px-6 py-3.5 text-xs sm:text-sm font-bold text-white shadow-md hover:bg-slate-800 transition-all cursor-pointer"
                 >
                   <span>View Projects</span>
@@ -85,10 +85,10 @@ export function SectionHero({ profile }: SectionHeroProps) {
                 <motion.button
                   type="button"
                   onClick={() => scrollTo('contact')}
-                  initial={{ opacity: 0, y: 35, scale: 0.92 }}
-                  whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                  initial={{ opacity: 0, scale: 0.65 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: false }}
-                  transition={{ duration: 2.4, delay: 0.95, ease: [0.16, 1, 0.3, 1] }}
+                  transition={{ duration: 2.0, delay: 0.95, ease: [0.16, 1, 0.3, 1] }}
                   className="inline-flex items-center gap-2 rounded-xl bg-white/90 border border-slate-300 px-6 py-3.5 text-xs sm:text-sm font-bold text-slate-800 hover:bg-white transition-all cursor-pointer shadow-2xs"
                 >
                   <span>Contact Me</span>
@@ -97,13 +97,13 @@ export function SectionHero({ profile }: SectionHeroProps) {
             </div>
           </div>
 
-          {/* Right Column: Portrait Photo with Entrance Animation (Significantly slower & majestic) + Continuous Idle Loop */}
+          {/* Right Column: Portrait Photo enters from Right with subtle scale (Crisp, No Blur) + Continuous Idle Loop */}
           <div className="lg:col-span-5 relative flex items-end justify-center self-end overflow-visible leading-none h-full">
             <motion.div
-              initial={{ opacity: 0, y: 90, scale: 0.88, filter: 'blur(10px)' }}
-              whileInView={{ opacity: 1, y: 0, scale: 1, filter: 'blur(0px)' }}
+              initial={{ opacity: 0, x: 80, scale: 0.9 }}
+              whileInView={{ opacity: 1, x: 0, scale: 1 }}
               viewport={{ once: false }}
-              transition={{ duration: 3.0, delay: 0.28, ease: [0.16, 1, 0.3, 1] }}
+              transition={{ duration: 2.6, delay: 0.25, ease: [0.16, 1, 0.3, 1] }}
               className="relative z-10 w-full flex justify-center items-end leading-none"
             >
               <motion.img
