@@ -146,23 +146,6 @@ export function SectionHero({ profile }: SectionHeroProps) {
                   />
                 </motion.div>
               </AnimatePresence>
-
-              {/* Subtle Slide Indicators */}
-              <div className="absolute bottom-3 sm:bottom-4 z-20 flex items-center gap-1.5 bg-black/20 backdrop-blur-md px-3 py-1.5 rounded-full border border-white/20">
-                {heroSlides.map((_, idx) => (
-                  <button
-                    key={idx}
-                    type="button"
-                    onClick={() => setCurrentSlide(idx)}
-                    aria-label={`Slide ${idx + 1}`}
-                    className={`transition-all duration-300 rounded-full h-1.5 cursor-pointer ${
-                      idx === currentSlide
-                        ? 'w-5 bg-white shadow-xs'
-                        : 'w-1.5 bg-white/50 hover:bg-white/80'
-                    }`}
-                  />
-                ))}
-              </div>
             </div>
           </div>
 
