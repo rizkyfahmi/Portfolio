@@ -1,4 +1,5 @@
 import { ArrowUp, Mail, Phone, MapPin } from 'lucide-react'
+import { motion } from 'framer-motion'
 import { GitHubIcon, InstagramIcon } from '@/components/ui/BrandIcons'
 import type { Profile } from '@/types'
 
@@ -176,50 +177,77 @@ export function Footer({ profile }: FooterProps) {
           </div>
 
           {/* Column 5: Kontak & Jejaring */}
-          <div className="col-span-1 md:col-span-1 lg:col-span-3 space-y-3">
-            <h4 className="text-xs sm:text-[13px] font-semibold tracking-wide text-white uppercase">
-              Contact
-            </h4>
-            <ul className="space-y-2 text-xs">
-              <li>
-                <a
-                  href={`mailto:${profile.email || 'rzkyfhm@gmail.com'}`}
-                  className="hover:text-white transition-colors whitespace-nowrap block"
-                >
-                  {profile.email || 'rzkyfhm@gmail.com'}
-                </a>
-              </li>
-              <li>
-                <a
-                  href="https://wa.me/6282338479390"
-                  target="_blank"
-                  rel="noreferrer noopener"
-                  className="hover:text-white transition-colors whitespace-nowrap block"
-                >
-                  082338479390 (WhatsApp)
-                </a>
-              </li>
-              <li>
-                <a
-                  href="https://instagram.com/rzkyfahm"
-                  target="_blank"
-                  rel="noreferrer noopener"
-                  className="hover:text-white transition-colors whitespace-nowrap block"
-                >
-                  @rzkyfahm (Instagram)
-                </a>
-              </li>
-              <li>
-                <a
-                  href="https://github.com/rizkyfahmi"
-                  target="_blank"
-                  rel="noreferrer noopener"
-                  className="hover:text-white transition-colors whitespace-nowrap block"
-                >
-                  github.com/rizkyfahmi
-                </a>
-              </li>
-            </ul>
+          <div className="col-span-2 sm:col-span-1 md:col-span-1 lg:col-span-3 space-y-3">
+            <div className="flex items-start justify-between gap-3">
+              <div className="space-y-3">
+                <h4 className="text-xs sm:text-[13px] font-semibold tracking-wide text-white uppercase">
+                  Contact
+                </h4>
+                <ul className="space-y-2 text-xs">
+                  <li>
+                    <a
+                      href={`mailto:${profile.email || 'rzkyfhm@gmail.com'}`}
+                      className="hover:text-white transition-colors whitespace-nowrap block"
+                    >
+                      {profile.email || 'rzkyfhm@gmail.com'}
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="https://wa.me/6282338479390"
+                      target="_blank"
+                      rel="noreferrer noopener"
+                      className="hover:text-white transition-colors whitespace-nowrap block"
+                    >
+                      082338479390 (WhatsApp)
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="https://instagram.com/rzkyfahm"
+                      target="_blank"
+                      rel="noreferrer noopener"
+                      className="hover:text-white transition-colors whitespace-nowrap block"
+                    >
+                      @rzkyfahm (Instagram)
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="https://github.com/rizkyfahmi"
+                      target="_blank"
+                      rel="noreferrer noopener"
+                      className="hover:text-white transition-colors whitespace-nowrap block"
+                    >
+                      github.com/rizkyfahmi
+                    </a>
+                  </li>
+                </ul>
+              </div>
+
+              {/* Mascot Sticker on the right of Contact */}
+              <motion.div
+                initial={{ opacity: 0, scale: 0.8, rotate: -6 }}
+                whileInView={{ opacity: 1, scale: 1, rotate: 0 }}
+                viewport={{ once: false, amount: 0.3 }}
+                whileHover={{ scale: 1.12, rotate: 4 }}
+                animate={{ y: [0, -5, 0], rotate: [0, 3, 0] }}
+                transition={{
+                  y: { duration: 4.2, repeat: Infinity, ease: 'easeInOut' },
+                  rotate: { duration: 4.2, repeat: Infinity, ease: 'easeInOut' },
+                  opacity: { duration: 0.6 },
+                  scale: { duration: 0.6 },
+                }}
+                className="shrink-0 select-none cursor-pointer self-start -mt-1"
+                title="Let's connect & collaborate!"
+              >
+                <img
+                  src="/images/sticker-thumbsup.png"
+                  alt="Thumbs Up Mascot Sticker"
+                  className="w-20 sm:w-22 md:w-24 lg:w-26 h-auto object-contain drop-shadow-[0_12px_24px_rgba(0,0,0,0.45)] pointer-events-none"
+                />
+              </motion.div>
+            </div>
           </div>
 
         </div>
