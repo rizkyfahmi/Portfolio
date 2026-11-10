@@ -351,8 +351,8 @@ export function SectionExperience({ profile }: SectionExperienceProps) {
                       ))}
                     </div>
 
-                    {/* Sticker: Pumped / Determined from SS placed at Bottom-Left of this section */}
-                    <div className="pt-2 flex justify-start">
+                    {/* Sticker: Pumped / Determined from SS placed at Bottom-Left of this section (shifted 50% & down 20px) */}
+                    <div className="pt-2 flex justify-start ml-[50%] mt-[20px]">
                       <motion.div
                         initial={{ opacity: 0, scale: 0.5, rotate: 12 }}
                         whileInView={{ opacity: 1, scale: 1, rotate: 6 }}
