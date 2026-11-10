@@ -93,8 +93,71 @@ export function SectionExperience({ profile }: SectionExperienceProps) {
           whileInView={{ opacity: 1, y: 0, scale: 1 }}
           viewport={{ once: false, amount: 0.12 }}
           transition={{ duration: 1.25, ease: [0.22, 1, 0.36, 1] }}
-          className="relative w-full rounded-[32px] sm:rounded-[44px] lg:rounded-[52px] bg-gradient-to-r from-[#edeff2] via-[#e5e8ee] to-[#cdd0d5] border border-slate-300/70 shadow-[0_25px_60px_-15px_rgba(15,23,42,0.08),0_10px_25px_-5px_rgba(15,23,42,0.04)] p-8 sm:p-12 lg:p-16 overflow-hidden"
+          className="relative w-full rounded-[32px] sm:rounded-[44px] lg:rounded-[52px] bg-gradient-to-r from-[#edeff2] via-[#e5e8ee] to-[#cdd0d5] border border-slate-300/70 shadow-[0_25px_60px_-15px_rgba(15,23,42,0.08),0_10px_25px_-5px_rgba(15,23,42,0.04)] p-8 sm:p-12 lg:p-16 overflow-visible"
         >
+          {/* Sticker 1: Coffee & Coding moved from Projects to Top-Right Corner */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.5, rotate: 10 }}
+            whileInView={{ opacity: 1, scale: 1, rotate: 4 }}
+            whileHover={{ scale: 1.15, rotate: 0 }}
+            animate={{ y: [0, -6, 0] }}
+            transition={{
+              y: { duration: 4.5, repeat: Infinity, ease: 'easeInOut' },
+              opacity: { duration: 1.5, delay: 0.3, ease: [0.16, 1, 0.3, 1] },
+              scale: { duration: 1.5, delay: 0.3, ease: [0.16, 1, 0.3, 1] },
+            }}
+            className="absolute top-4 right-4 sm:top-6 sm:right-8 z-30 cursor-pointer select-none"
+            title="Fueled by coffee & coding"
+          >
+            <img
+              src="/images/sticker-coding.png"
+              alt="Coffee & coding mascot sticker"
+              className="w-16 sm:w-20 lg:w-24 h-auto drop-shadow-[0_12px_24px_rgba(0,0,0,0.16)] pointer-events-none"
+            />
+          </motion.div>
+
+          {/* Sticker 2: Sleepy / Rest on Hand at Bottom-Left Corner */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.5, rotate: -10 }}
+            whileInView={{ opacity: 1, scale: 1, rotate: -4 }}
+            whileHover={{ scale: 1.15, rotate: 0 }}
+            animate={{ y: [0, -5, 0] }}
+            transition={{
+              y: { duration: 4.8, repeat: Infinity, ease: 'easeInOut' },
+              opacity: { duration: 1.5, delay: 0.5, ease: [0.16, 1, 0.3, 1] },
+              scale: { duration: 1.5, delay: 0.5, ease: [0.16, 1, 0.3, 1] },
+            }}
+            className="absolute bottom-4 left-4 sm:bottom-6 sm:left-8 z-30 cursor-pointer select-none"
+            title="Resting after hours of dedicated work"
+          >
+            <img
+              src="/images/sticker-sleepy.png"
+              alt="Sleepy mascot sticker"
+              className="w-16 sm:w-20 lg:w-24 h-auto drop-shadow-[0_12px_24px_rgba(0,0,0,0.16)] pointer-events-none"
+            />
+          </motion.div>
+
+          {/* Sticker 3: Pumped / Determined at Middle-Right Edge */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.5, rotate: 12 }}
+            whileInView={{ opacity: 1, scale: 1, rotate: 6 }}
+            whileHover={{ scale: 1.15, rotate: 0 }}
+            animate={{ y: [0, -6, 0] }}
+            transition={{
+              y: { duration: 4.2, repeat: Infinity, ease: 'easeInOut' },
+              opacity: { duration: 1.5, delay: 0.6, ease: [0.16, 1, 0.3, 1] },
+              scale: { duration: 1.5, delay: 0.6, ease: [0.16, 1, 0.3, 1] },
+            }}
+            className="hidden sm:block absolute top-[44%] -translate-y-1/2 right-2 sm:right-4 lg:-right-3 z-30 cursor-pointer select-none"
+            title="Pumped and excited for new challenges"
+          >
+            <img
+              src="/images/sticker-pumped.png"
+              alt="Pumped coding mascot sticker"
+              className="w-16 sm:w-20 lg:w-24 h-auto drop-shadow-[0_12px_24px_rgba(0,0,0,0.16)] pointer-events-none"
+            />
+          </motion.div>
+
           {/* Top Badge Title with subtle tilt animation */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
