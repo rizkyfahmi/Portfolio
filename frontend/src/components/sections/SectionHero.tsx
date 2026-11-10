@@ -15,16 +15,16 @@ export function SectionHero({ profile }: SectionHeroProps) {
     <section
       id="home"
       aria-labelledby="hero-title"
-      className="w-full min-h-[calc(100vh-5rem)] flex items-center justify-center pt-28 pb-20 border-b border-slate-200/80 scroll-mt-20 bg-[#f5f5f7] overflow-visible"
+      className="relative z-0 w-full min-h-[calc(100vh-5rem)] flex items-center justify-center pt-28 pb-20 border-b border-slate-200/80 scroll-mt-20 bg-[#f5f5f7] overflow-visible"
     >
       <div className="shell-slide w-full">
         
         {/* Main Card Container matching Home Hero Dimensions & Squircles */}
         <motion.div
-          initial={{ opacity: 0, y: 100, scale: 0.92 }}
+          initial={{ opacity: 0, y: 40, scale: 0.96 }}
           whileInView={{ opacity: 1, y: 0, scale: 1 }}
-          viewport={{ once: false, amount: 0.15 }}
-          transition={{ duration: 1.35, ease: [0.22, 1, 0.36, 1] }}
+          viewport={{ once: true, amount: 0.1 }}
+          transition={{ duration: 1.1, ease: [0.22, 1, 0.36, 1] }}
           className="group relative w-full rounded-[32px] sm:rounded-[44px] lg:rounded-[52px] bg-gradient-to-r from-[#edeff2] via-[#e5e8ee] to-[#cdd0d5] border border-slate-300/70 shadow-[0_25px_60px_-15px_rgba(15,23,42,0.08),0_10px_25px_-5px_rgba(15,23,42,0.04)] grid grid-cols-1 lg:grid-cols-12 items-stretch overflow-visible min-h-[460px] lg:min-h-[500px]"
         >
           
@@ -36,7 +36,7 @@ export function SectionHero({ profile }: SectionHeroProps) {
               <motion.div
                 initial={{ opacity: 0, x: -35, y: -15, filter: 'blur(6px)' }}
                 whileInView={{ opacity: 1, x: 0, y: 0, filter: 'blur(0px)' }}
-                viewport={{ once: false }}
+                viewport={{ once: true }}
                 transition={{ duration: 1.1, ease: [0.22, 1, 0.36, 1] }}
               >
                 <h1
@@ -52,10 +52,10 @@ export function SectionHero({ profile }: SectionHeroProps) {
 
               {/* Description: Ascends from below with gentle delay */}
               <motion.p
-                initial={{ opacity: 0, y: 30 }}
+                initial={{ opacity: 0, y: 25 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: false }}
-                transition={{ duration: 1.25, delay: 0.22, ease: [0.22, 1, 0.36, 1] }}
+                viewport={{ once: true }}
+                transition={{ duration: 1.1, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
                 className="text-xs sm:text-sm lg:text-base leading-relaxed text-slate-600 max-w-lg text-pretty"
               >
                 {profile.intro ||
@@ -64,10 +64,10 @@ export function SectionHero({ profile }: SectionHeroProps) {
 
               {/* Action Buttons: Staggered pop */}
               <motion.div
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 15 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: false }}
-                transition={{ duration: 1.1, delay: 0.35, ease: [0.22, 1, 0.36, 1] }}
+                viewport={{ once: true }}
+                transition={{ duration: 1.0, delay: 0.25, ease: [0.22, 1, 0.36, 1] }}
                 className="pt-2 flex flex-wrap items-center gap-3.5"
               >
                 <button
