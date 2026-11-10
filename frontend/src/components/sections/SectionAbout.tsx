@@ -10,17 +10,39 @@ export function SectionAbout({ profile }: SectionAboutProps) {
     <section
       id="about"
       aria-labelledby="about-title"
-      className="relative z-10 w-full py-16 sm:py-24 border-b border-slate-200/80 scroll-mt-20 bg-[#f5f5f7] flex items-center justify-center"
+      className="relative z-10 w-full py-16 sm:py-24 border-b border-slate-200/80 scroll-mt-20 bg-[#f5f5f7] flex items-center justify-center overflow-visible"
     >
-      <div className="shell-slide w-full">
+      <div className="shell-slide w-full overflow-visible">
         {/* Main Card Container: Full Horizontal Width, Scaled down Vertically by 20% (min-h-[400px]) */}
         <motion.div
           initial={{ opacity: 0, x: -60, y: 30, scale: 0.94 }}
           whileInView={{ opacity: 1, x: 0, y: 0, scale: 1 }}
           viewport={{ once: false, amount: 0.2 }}
           transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-          className="group relative w-full rounded-[32px] sm:rounded-[44px] lg:rounded-[52px] bg-gradient-to-r from-[#edeff2] via-[#e5e8ee] to-[#cdd0d5] border border-slate-300/70 shadow-[0_25px_60px_-15px_rgba(15,23,42,0.08),0_10px_25px_-5px_rgba(15,23,42,0.04)] flex flex-col lg:flex-row items-stretch overflow-hidden min-h-[360px] lg:min-h-[400px]"
+          className="group relative w-full rounded-[32px] sm:rounded-[44px] lg:rounded-[52px] bg-gradient-to-r from-[#edeff2] via-[#e5e8ee] to-[#cdd0d5] border border-slate-300/70 shadow-[0_25px_60px_-15px_rgba(15,23,42,0.08),0_10px_25px_-5px_rgba(15,23,42,0.04)] flex flex-col lg:flex-row items-stretch overflow-visible min-h-[360px] lg:min-h-[400px]"
         >
+          {/* Mascot Sticker: Thinking / Contemplating at Top-Right Corner of Card (Half inside, half outside) */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.5, rotate: 12 }}
+            whileInView={{ opacity: 1, scale: 1, rotate: 6 }}
+            whileHover={{ scale: 1.15, rotate: 0 }}
+            animate={{ y: [0, -6, 0], rotate: [6, 9, 6] }}
+            transition={{
+              y: { duration: 4.8, repeat: Infinity, ease: 'easeInOut' },
+              rotate: { duration: 4.8, repeat: Infinity, ease: 'easeInOut' },
+              opacity: { duration: 1.8, delay: 0.4 },
+              scale: { duration: 1.8, delay: 0.4 },
+            }}
+            className="absolute -top-7 -right-4 sm:-top-10 sm:-right-6 lg:-top-12 lg:-right-8 z-30 cursor-pointer select-none"
+            title="Reflecting on continuous learning & growth"
+          >
+            <img
+              src="/images/sticker-thinking.png"
+              alt="Thinking mascot sticker"
+              className="w-20 sm:w-24 lg:w-28 h-auto drop-shadow-[0_15px_30px_rgba(0,0,0,0.18)] pointer-events-none"
+            />
+          </motion.div>
+
           {/* Left Column: Photo slides in smoothly from Left (Crisp, Slimmer Horizontal Aspect) */}
           <motion.div
             initial={{ opacity: 0, x: -70, scale: 0.94 }}
@@ -37,28 +59,7 @@ export function SectionAbout({ profile }: SectionAboutProps) {
           </motion.div>
 
           {/* Right Column: Vertically Centered Title & About Description Adjusted to Fill Gracefully */}
-          <div className="flex-1 p-6 sm:p-10 lg:p-12 flex flex-col justify-center my-auto space-y-4 sm:space-y-5 relative">
-            {/* Mascot Sticker: Thinking / Contemplating */}
-            <motion.div
-              initial={{ opacity: 0, scale: 0.5, rotate: 12 }}
-              whileInView={{ opacity: 1, scale: 1, rotate: 6 }}
-              whileHover={{ scale: 1.15, rotate: 0 }}
-              animate={{ y: [0, -6, 0], rotate: [6, 9, 6] }}
-              transition={{
-                y: { duration: 4.8, repeat: Infinity, ease: 'easeInOut' },
-                rotate: { duration: 4.8, repeat: Infinity, ease: 'easeInOut' },
-                opacity: { duration: 1.8, delay: 0.4 },
-                scale: { duration: 1.8, delay: 0.4 },
-              }}
-              className="absolute top-4 right-4 sm:top-6 sm:right-8 z-20 cursor-pointer select-none"
-              title="Reflecting on continuous learning & growth"
-            >
-              <img
-                src="/images/sticker-thinking.png"
-                alt="Thinking mascot sticker"
-                className="w-16 sm:w-20 lg:w-24 h-auto drop-shadow-[0_10px_20px_rgba(0,0,0,0.14)] pointer-events-none"
-              />
-            </motion.div>
+          <div className="flex-1 p-6 sm:p-10 lg:p-12 flex flex-col justify-center my-auto space-y-4 sm:space-y-5">
 
             <motion.h2
               id="about-title"
