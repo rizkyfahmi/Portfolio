@@ -219,7 +219,7 @@ export function SectionExperience({ profile }: SectionExperienceProps) {
 
                     <div className="relative w-full h-56 sm:h-64 rounded-lg overflow-hidden bg-gradient-to-b from-slate-200 via-slate-100 to-slate-200 border border-slate-300/80 flex items-end justify-center">
                       <img
-                        src="/images/hero-portrait.png?v=8"
+                        src="/images/hero-portrait.png?v=9"
                         alt={profile?.name || 'Rizky Fahmi'}
                         className="w-full h-full object-cover object-top filter grayscale contrast-105"
                       />

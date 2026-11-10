@@ -128,7 +128,7 @@ export function SectionHero({ profile }: SectionHeroProps) {
               className="relative z-10 w-full flex justify-center items-end leading-none"
             >
               <motion.img
-                src="/images/hero-portrait.png?v=8"
+                src="/images/hero-portrait.png?v=9"
                 alt={profile.name}
                 animate={{
                   scale: [1.05, 1.075, 1.05],
