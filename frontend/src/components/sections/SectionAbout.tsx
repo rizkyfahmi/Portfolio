@@ -17,7 +17,7 @@ export function SectionAbout({ profile }: SectionAboutProps) {
         <motion.div
           initial={{ opacity: 0, x: -60, y: 30, scale: 0.94 }}
           whileInView={{ opacity: 1, x: 0, y: 0, scale: 1 }}
-          viewport={{ once: true, amount: 0.15 }}
+          viewport={{ once: false, amount: 0.2 }}
           transition={{ duration: 1.35, ease: [0.22, 1, 0.36, 1] }}
           className="group relative w-full rounded-[32px] sm:rounded-[44px] lg:rounded-[52px] bg-gradient-to-r from-[#edeff2] via-[#e5e8ee] to-[#cdd0d5] border border-slate-300/70 shadow-[0_25px_60px_-15px_rgba(15,23,42,0.08),0_10px_25px_-5px_rgba(15,23,42,0.04)] flex flex-col lg:flex-row items-stretch overflow-hidden min-h-[460px] lg:min-h-[500px]"
         >
@@ -25,7 +25,7 @@ export function SectionAbout({ profile }: SectionAboutProps) {
           <motion.div
             initial={{ opacity: 0, x: -70 }}
             whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: false }}
             transition={{ duration: 1.4, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
             className="shrink-0 relative overflow-hidden self-stretch flex items-stretch justify-center bg-slate-900 m-2.5 sm:m-3.5 lg:m-4 rounded-[24px] sm:rounded-[34px] lg:rounded-[42px] border border-slate-300/80 shadow-[0_15px_35px_-10px_rgba(15,23,42,0.12)] max-h-[480px] lg:max-h-none"
           >
@@ -42,7 +42,7 @@ export function SectionAbout({ profile }: SectionAboutProps) {
               id="about-title"
               initial={{ opacity: 0, x: -40, filter: 'blur(6px)' }}
               whileInView={{ opacity: 1, x: 0, filter: 'blur(0px)' }}
-              viewport={{ once: true, amount: 0.3 }}
+              viewport={{ once: false, amount: 0.3 }}
               transition={{ duration: 1.1, ease: [0.22, 1, 0.36, 1] }}
               className="text-2xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-slate-900 leading-tight"
             >
@@ -52,7 +52,7 @@ export function SectionAbout({ profile }: SectionAboutProps) {
             <motion.div
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.2 }}
+              viewport={{ once: false, amount: 0.2 }}
               transition={{ duration: 1.3, delay: 0.25, ease: [0.22, 1, 0.36, 1] }}
               className="space-y-3.5 text-xs sm:text-sm lg:text-[15px] leading-relaxed text-slate-600 max-w-xl text-pretty"
             >
@@ -61,7 +61,7 @@ export function SectionAbout({ profile }: SectionAboutProps) {
                   key={idx}
                   initial={{ opacity: 0, y: 15 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
+                  viewport={{ once: false }}
                   transition={{ duration: 0.9, delay: 0.25 + idx * 0.1, ease: [0.22, 1, 0.36, 1] }}
                 >
                   {paragraph.trim()}

@@ -21,10 +21,10 @@ export function SectionHero({ profile }: SectionHeroProps) {
         
         {/* Main Card Container matching Home Hero Dimensions & Squircles */}
         <motion.div
-          initial={{ opacity: 0, y: 40, scale: 0.96 }}
-          whileInView={{ opacity: 1, y: 0, scale: 1 }}
-          viewport={{ once: true, amount: 0.1 }}
-          transition={{ duration: 1.1, ease: [0.22, 1, 0.36, 1] }}
+          initial={{ opacity: 0, scale: 0.93, y: -25 }}
+          whileInView={{ opacity: 1, scale: 1, y: 0 }}
+          viewport={{ once: false, amount: 0.2 }}
+          transition={{ duration: 1.15, ease: [0.22, 1, 0.36, 1] }}
           className="group relative w-full rounded-[32px] sm:rounded-[44px] lg:rounded-[52px] bg-gradient-to-r from-[#edeff2] via-[#e5e8ee] to-[#cdd0d5] border border-slate-300/70 shadow-[0_25px_60px_-15px_rgba(15,23,42,0.08),0_10px_25px_-5px_rgba(15,23,42,0.04)] grid grid-cols-1 lg:grid-cols-12 items-stretch overflow-visible min-h-[460px] lg:min-h-[500px]"
         >
           
@@ -34,10 +34,10 @@ export function SectionHero({ profile }: SectionHeroProps) {
             <div className="space-y-6">
               {/* Two-Tone Big Headline: Slides from top-left with blur resolve */}
               <motion.div
-                initial={{ opacity: 0, x: -35, y: -15, filter: 'blur(6px)' }}
-                whileInView={{ opacity: 1, x: 0, y: 0, filter: 'blur(0px)' }}
-                viewport={{ once: true }}
-                transition={{ duration: 1.1, ease: [0.22, 1, 0.36, 1] }}
+                initial={{ opacity: 0, x: -35, filter: 'blur(6px)' }}
+                whileInView={{ opacity: 1, x: 0, filter: 'blur(0px)' }}
+                viewport={{ once: false }}
+                transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
               >
                 <h1
                   id="hero-title"
@@ -52,10 +52,10 @@ export function SectionHero({ profile }: SectionHeroProps) {
 
               {/* Description: Ascends from below with gentle delay */}
               <motion.p
-                initial={{ opacity: 0, y: 25 }}
+                initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 1.1, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
+                viewport={{ once: false }}
+                transition={{ duration: 1.0, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
                 className="text-xs sm:text-sm lg:text-base leading-relaxed text-slate-600 max-w-lg text-pretty"
               >
                 {profile.intro ||
@@ -66,8 +66,8 @@ export function SectionHero({ profile }: SectionHeroProps) {
               <motion.div
                 initial={{ opacity: 0, y: 15 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 1.0, delay: 0.25, ease: [0.22, 1, 0.36, 1] }}
+                viewport={{ once: false }}
+                transition={{ duration: 0.9, delay: 0.25, ease: [0.22, 1, 0.36, 1] }}
                 className="pt-2 flex flex-wrap items-center gap-3.5"
               >
                 <button
