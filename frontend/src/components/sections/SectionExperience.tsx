@@ -116,27 +116,6 @@ export function SectionExperience({ profile }: SectionExperienceProps) {
             />
           </motion.div>
 
-          {/* Sticker 2: Sleepy / Rest on Hand at Bottom-Left Corner (Half inside, half outside) */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.5, rotate: -10 }}
-            whileInView={{ opacity: 1, scale: 1, rotate: -6 }}
-            whileHover={{ scale: 1.15, rotate: 0 }}
-            animate={{ y: [0, -5, 0] }}
-            transition={{
-              y: { duration: 4.8, repeat: Infinity, ease: 'easeInOut' },
-              opacity: { duration: 1.5, delay: 0.5, ease: [0.16, 1, 0.3, 1] },
-              scale: { duration: 1.5, delay: 0.5, ease: [0.16, 1, 0.3, 1] },
-            }}
-            className="absolute -bottom-8 -left-4 sm:-bottom-11 sm:-left-8 lg:-bottom-13 lg:-left-10 z-30 cursor-pointer select-none"
-            title="Resting after hours of dedicated work"
-          >
-            <img
-              src="/images/sticker-sleepy.png"
-              alt="Sleepy mascot sticker"
-              className="w-20 sm:w-24 lg:w-28 h-auto drop-shadow-[0_15px_30px_rgba(0,0,0,0.18)] pointer-events-none"
-            />
-          </motion.div>
-
           {/* Sticker 3: Pumped / Determined at Middle-Right Edge */}
           <motion.div
             initial={{ opacity: 0, scale: 0.5, rotate: 12 }}
@@ -370,6 +349,29 @@ export function SectionExperience({ profile }: SectionExperienceProps) {
                           </span>
                         </div>
                       ))}
+                    </div>
+
+                    {/* Sticker 2: Sleepy / Rest on Hand at Bottom-Left of this section */}
+                    <div className="pt-2 flex justify-start">
+                      <motion.div
+                        initial={{ opacity: 0, scale: 0.5, rotate: -8 }}
+                        whileInView={{ opacity: 1, scale: 1, rotate: -4 }}
+                        whileHover={{ scale: 1.15, rotate: 0 }}
+                        animate={{ y: [0, -5, 0] }}
+                        transition={{
+                          y: { duration: 4.8, repeat: Infinity, ease: 'easeInOut' },
+                          opacity: { duration: 1.5, delay: 0.4, ease: [0.16, 1, 0.3, 1] },
+                          scale: { duration: 1.5, delay: 0.4, ease: [0.16, 1, 0.3, 1] },
+                        }}
+                        className="cursor-pointer select-none"
+                        title="Resting after hours of dedicated work"
+                      >
+                        <img
+                          src="/images/sticker-sleepy.png"
+                          alt="Sleepy mascot sticker"
+                          className="w-18 sm:w-22 lg:w-24 h-auto drop-shadow-[0_12px_24px_rgba(0,0,0,0.16)] pointer-events-none"
+                        />
+                      </motion.div>
                     </div>
                   </div>
                 </div>
