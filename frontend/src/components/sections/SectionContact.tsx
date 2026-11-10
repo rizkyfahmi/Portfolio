@@ -191,7 +191,7 @@ export function SectionContact({ profile }: SectionContactProps) {
 
                   {/* Body (Head, hair, glasses, shirt, torso) with subtle breathing idle motion */}
                   <motion.img
-                    src="/images/chibi-body.png?v=4"
+                    src="/images/chibi-body.png?v=5"
                     alt="Rizky Fahmi Character"
                     animate={{
                       y: [0, -3, 0],
@@ -206,10 +206,10 @@ export function SectionContact({ profile }: SectionContactProps) {
 
                   {/* Animated Waving Hand & Arm */}
                   <motion.img
-                    src="/images/chibi-hand.png?v=4"
+                    src="/images/chibi-hand.png?v=5"
                     alt="Waving Hand"
                     animate={{
-                      rotate: [0, 10, -2, 10, 0],
+                      rotate: [0, 8, -2, 8, 0],
                     }}
                     transition={{
                       repeat: Infinity,
@@ -217,7 +217,7 @@ export function SectionContact({ profile }: SectionContactProps) {
                       ease: 'easeInOut',
                     }}
                     style={{
-                      transformOrigin: '28.3% 77.1%', // Exact pivot point at the wrist cuff
+                      transformOrigin: '23.9% 72.3%', // Anatomical wrist pivot entering sleeve cuff
                     }}
                     className="absolute inset-0 w-full h-full object-contain pointer-events-none"
                   />
