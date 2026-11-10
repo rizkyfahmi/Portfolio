@@ -212,6 +212,22 @@ export function SectionExperience({ profile }: SectionExperienceProps) {
                     </div>
 
                   </div>
+
+                  {/* Mascot Sticker: Relaxed & Content (Slapped playfully on the ID Pass) */}
+                  <motion.div
+                    initial={{ opacity: 0, scale: 0.5, rotate: 10 }}
+                    whileInView={{ opacity: 1, scale: 1, rotate: 6 }}
+                    whileHover={{ scale: 1.18, rotate: 0 }}
+                    transition={{ duration: 1.2, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
+                    className="absolute -bottom-7 -right-6 z-30 cursor-pointer select-none"
+                    title="Taking pride in learning & development"
+                  >
+                    <img
+                      src="/images/sticker-relaxed.png"
+                      alt="Relaxed mascot sticker"
+                      className="w-20 sm:w-24 h-auto drop-shadow-[0_12px_24px_rgba(0,0,0,0.22)] pointer-events-none"
+                    />
+                  </motion.div>
                 </div>
               </motion.div>
             </div>
@@ -229,10 +245,10 @@ export function SectionExperience({ profile }: SectionExperienceProps) {
               <div className="space-y-3">
                 <motion.h2
                   id="experience-title"
-                  initial={{ opacity: 0, x: -30, filter: 'blur(5px)' }}
-                  whileInView={{ opacity: 1, x: 0, filter: 'blur(0px)' }}
+                  initial={{ opacity: 0, x: -30 }}
+                  whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: false, amount: 0.2 }}
-                  transition={{ duration: 1.0, ease: [0.22, 1, 0.36, 1] }}
+                  transition={{ duration: 1.5, ease: [0.16, 1, 0.3, 1] }}
                   className="text-2xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-slate-900 leading-tight"
                 >
                   My Journey &amp; Experience<span className="text-slate-400">.</span>

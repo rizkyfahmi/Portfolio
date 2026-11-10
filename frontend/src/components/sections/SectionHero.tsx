@@ -67,7 +67,7 @@ export function SectionHero({ profile }: SectionHeroProps) {
                   'I am a Full-Stack Developer passionate about web engineering and modern technologies. I love turning ideas into real-world projects, crafting clean interfaces, and building resilient systems through continuous learning and exploration.'}
               </motion.p>
 
-              {/* Action Buttons: Pops in from Center via Scale (Crisp, No Blur) */}
+              {/* Action Buttons: Pops in from Center via Scale + Playful Thumbs-Up Sticker */}
               <div className="pt-2 flex flex-wrap items-center gap-3.5">
                 <motion.button
                   type="button"
@@ -93,6 +93,27 @@ export function SectionHero({ profile }: SectionHeroProps) {
                 >
                   <span>Contact Me</span>
                 </motion.button>
+
+                {/* Mascot Sticker: Winking Thumbs-Up */}
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.5, rotate: -10 }}
+                  whileInView={{ opacity: 1, scale: 1, rotate: -4 }}
+                  whileHover={{ scale: 1.15, rotate: 2 }}
+                  animate={{ y: [0, -5, 0] }}
+                  transition={{
+                    y: { duration: 4, repeat: Infinity, ease: 'easeInOut' },
+                    opacity: { duration: 1.8, delay: 1.1, ease: [0.16, 1, 0.3, 1] },
+                    scale: { duration: 1.8, delay: 1.1, ease: [0.16, 1, 0.3, 1] },
+                  }}
+                  className="hidden sm:inline-block ml-1 cursor-pointer select-none"
+                  title="Let's build something great together!"
+                >
+                  <img
+                    src="/images/sticker-thumbsup.png"
+                    alt="Thumbs-up mascot sticker"
+                    className="w-16 lg:w-20 h-auto drop-shadow-[0_10px_20px_rgba(0,0,0,0.14)] pointer-events-none"
+                  />
+                </motion.div>
               </div>
             </div>
           </div>

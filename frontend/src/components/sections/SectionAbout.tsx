@@ -37,7 +37,29 @@ export function SectionAbout({ profile }: SectionAboutProps) {
           </motion.div>
 
           {/* Right Column: Vertically Centered Title & About Description Adjusted to Fill Gracefully */}
-          <div className="flex-1 p-6 sm:p-10 lg:p-12 flex flex-col justify-center my-auto space-y-4 sm:space-y-5">
+          <div className="flex-1 p-6 sm:p-10 lg:p-12 flex flex-col justify-center my-auto space-y-4 sm:space-y-5 relative">
+            {/* Mascot Sticker: Thinking / Contemplating */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.5, rotate: 12 }}
+              whileInView={{ opacity: 1, scale: 1, rotate: 6 }}
+              whileHover={{ scale: 1.15, rotate: 0 }}
+              animate={{ y: [0, -6, 0], rotate: [6, 9, 6] }}
+              transition={{
+                y: { duration: 4.8, repeat: Infinity, ease: 'easeInOut' },
+                rotate: { duration: 4.8, repeat: Infinity, ease: 'easeInOut' },
+                opacity: { duration: 1.8, delay: 0.4 },
+                scale: { duration: 1.8, delay: 0.4 },
+              }}
+              className="absolute top-4 right-4 sm:top-6 sm:right-8 z-20 cursor-pointer select-none"
+              title="Reflecting on continuous learning & growth"
+            >
+              <img
+                src="/images/sticker-thinking.png"
+                alt="Thinking mascot sticker"
+                className="w-16 sm:w-20 lg:w-24 h-auto drop-shadow-[0_10px_20px_rgba(0,0,0,0.14)] pointer-events-none"
+              />
+            </motion.div>
+
             <motion.h2
               id="about-title"
               initial={{ opacity: 0, y: -35 }}

@@ -16,14 +16,35 @@ export function SectionProjects({ projects }: SectionProjectsProps) {
     >
       <div className="shell-slide w-full">
         
-        {/* Title: On top and centered */}
-        <div className="max-w-3xl mx-auto text-center mb-16 sm:mb-24">
+        {/* Title: On top and centered with Coffee & Coding Mascot Sticker */}
+        <div className="max-w-3xl mx-auto text-center mb-16 sm:mb-24 flex flex-col items-center">
+          {/* Mascot Sticker: Drinking Coffee & Coding */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.6, y: 25 }}
+            whileInView={{ opacity: 1, scale: 1, y: 0 }}
+            whileHover={{ scale: 1.15, rotate: -4 }}
+            animate={{ y: [0, -6, 0] }}
+            transition={{
+              y: { duration: 4.2, repeat: Infinity, ease: 'easeInOut' },
+              opacity: { duration: 1.5, ease: [0.16, 1, 0.3, 1] },
+              scale: { duration: 1.5, ease: [0.16, 1, 0.3, 1] },
+            }}
+            className="mb-4 cursor-pointer select-none"
+            title="Building applications fueled by coffee & curiosity"
+          >
+            <img
+              src="/images/sticker-coding.png"
+              alt="Coding with coffee mascot sticker"
+              className="w-20 sm:w-24 lg:w-28 h-auto drop-shadow-[0_12px_24px_rgba(0,0,0,0.12)] pointer-events-none"
+            />
+          </motion.div>
+
           <motion.h2
             id="portfolio-title"
-            initial={{ opacity: 0, y: 50, filter: 'blur(8px)' }}
-            whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+            initial={{ opacity: 0, y: 35 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: false, amount: 0.3 }}
-            transition={{ duration: 1.25, ease: [0.22, 1, 0.36, 1] }}
+            transition={{ duration: 1.5, ease: [0.16, 1, 0.3, 1] }}
             className="text-3xl sm:text-5xl font-extrabold tracking-tight text-slate-900 leading-tight"
           >
             Featured Projects<span className="text-slate-400">.</span>
