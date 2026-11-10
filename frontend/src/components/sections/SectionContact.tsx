@@ -191,7 +191,7 @@ export function SectionContact({ profile }: SectionContactProps) {
 
                   {/* Body (Head, hair, glasses, shirt, torso) with subtle breathing idle motion */}
                   <motion.img
-                    src="/images/chibi-body.png?v=5"
+                    src="/images/chibi-body.png?v=6"
                     alt="Rizky Fahmi Character"
                     animate={{
                       y: [0, -3, 0],
@@ -206,7 +206,7 @@ export function SectionContact({ profile }: SectionContactProps) {
 
                   {/* Animated Waving Hand & Arm */}
                   <motion.img
-                    src="/images/chibi-hand.png?v=5"
+                    src="/images/chibi-hand.png?v=6"
                     alt="Waving Hand"
                     animate={{
                       rotate: [0, 8, -2, 8, 0],
