@@ -84,9 +84,9 @@ export function SectionExperience({ profile }: SectionExperienceProps) {
     <section
       id="experience"
       aria-labelledby="experience-title"
-      className="w-full py-20 sm:py-28 border-b border-slate-200/80 scroll-mt-20 bg-[#f5f5f7] flex items-center justify-center"
+      className="w-full py-24 sm:py-32 border-b border-slate-200/80 scroll-mt-20 bg-[#f5f5f7] flex items-center justify-center overflow-visible"
     >
-      <div className="shell-slide w-full">
+      <div className="shell-slide w-full overflow-visible">
         {/* Main Card Container with Entrance & Exit inView Animation */}
         <motion.div
           initial={{ opacity: 0, y: 80, scale: 0.94 }}
@@ -95,10 +95,10 @@ export function SectionExperience({ profile }: SectionExperienceProps) {
           transition={{ duration: 1.25, ease: [0.22, 1, 0.36, 1] }}
           className="relative w-full rounded-[32px] sm:rounded-[44px] lg:rounded-[52px] bg-gradient-to-r from-[#edeff2] via-[#e5e8ee] to-[#cdd0d5] border border-slate-300/70 shadow-[0_25px_60px_-15px_rgba(15,23,42,0.08),0_10px_25px_-5px_rgba(15,23,42,0.04)] p-8 sm:p-12 lg:p-16 overflow-visible"
         >
-          {/* Sticker 1: Coffee & Coding moved from Projects to Top-Right Corner */}
+          {/* Sticker 1: Coffee & Coding at Top-Right Corner (Half inside, half outside) */}
           <motion.div
             initial={{ opacity: 0, scale: 0.5, rotate: 10 }}
-            whileInView={{ opacity: 1, scale: 1, rotate: 4 }}
+            whileInView={{ opacity: 1, scale: 1, rotate: 6 }}
             whileHover={{ scale: 1.15, rotate: 0 }}
             animate={{ y: [0, -6, 0] }}
             transition={{
@@ -106,20 +106,20 @@ export function SectionExperience({ profile }: SectionExperienceProps) {
               opacity: { duration: 1.5, delay: 0.3, ease: [0.16, 1, 0.3, 1] },
               scale: { duration: 1.5, delay: 0.3, ease: [0.16, 1, 0.3, 1] },
             }}
-            className="absolute top-4 right-4 sm:top-6 sm:right-8 z-30 cursor-pointer select-none"
+            className="absolute -top-8 -right-4 sm:-top-11 sm:-right-8 lg:-top-13 lg:-right-10 z-30 cursor-pointer select-none"
             title="Fueled by coffee & coding"
           >
             <img
               src="/images/sticker-coding.png"
               alt="Coffee & coding mascot sticker"
-              className="w-16 sm:w-20 lg:w-24 h-auto drop-shadow-[0_12px_24px_rgba(0,0,0,0.16)] pointer-events-none"
+              className="w-20 sm:w-24 lg:w-28 h-auto drop-shadow-[0_15px_30px_rgba(0,0,0,0.18)] pointer-events-none"
             />
           </motion.div>
 
-          {/* Sticker 2: Sleepy / Rest on Hand at Bottom-Left Corner */}
+          {/* Sticker 2: Sleepy / Rest on Hand at Bottom-Left Corner (Half inside, half outside) */}
           <motion.div
             initial={{ opacity: 0, scale: 0.5, rotate: -10 }}
-            whileInView={{ opacity: 1, scale: 1, rotate: -4 }}
+            whileInView={{ opacity: 1, scale: 1, rotate: -6 }}
             whileHover={{ scale: 1.15, rotate: 0 }}
             animate={{ y: [0, -5, 0] }}
             transition={{
@@ -127,17 +127,17 @@ export function SectionExperience({ profile }: SectionExperienceProps) {
               opacity: { duration: 1.5, delay: 0.5, ease: [0.16, 1, 0.3, 1] },
               scale: { duration: 1.5, delay: 0.5, ease: [0.16, 1, 0.3, 1] },
             }}
-            className="absolute bottom-4 left-4 sm:bottom-6 sm:left-8 z-30 cursor-pointer select-none"
+            className="absolute -bottom-8 -left-4 sm:-bottom-11 sm:-left-8 lg:-bottom-13 lg:-left-10 z-30 cursor-pointer select-none"
             title="Resting after hours of dedicated work"
           >
             <img
               src="/images/sticker-sleepy.png"
               alt="Sleepy mascot sticker"
-              className="w-16 sm:w-20 lg:w-24 h-auto drop-shadow-[0_12px_24px_rgba(0,0,0,0.16)] pointer-events-none"
+              className="w-20 sm:w-24 lg:w-28 h-auto drop-shadow-[0_15px_30px_rgba(0,0,0,0.18)] pointer-events-none"
             />
           </motion.div>
 
-          {/* Sticker 3: Pumped / Determined at Middle-Right Edge */}
+          {/* Sticker 3: Pumped / Determined at Middle-Right Edge (Half inside, half outside) */}
           <motion.div
             initial={{ opacity: 0, scale: 0.5, rotate: 12 }}
             whileInView={{ opacity: 1, scale: 1, rotate: 6 }}
@@ -148,13 +148,13 @@ export function SectionExperience({ profile }: SectionExperienceProps) {
               opacity: { duration: 1.5, delay: 0.6, ease: [0.16, 1, 0.3, 1] },
               scale: { duration: 1.5, delay: 0.6, ease: [0.16, 1, 0.3, 1] },
             }}
-            className="hidden sm:block absolute top-[44%] -translate-y-1/2 right-2 sm:right-4 lg:-right-3 z-30 cursor-pointer select-none"
+            className="hidden sm:block absolute top-[44%] -translate-y-1/2 -right-4 sm:-right-8 lg:-right-10 z-30 cursor-pointer select-none"
             title="Pumped and excited for new challenges"
           >
             <img
               src="/images/sticker-pumped.png"
               alt="Pumped coding mascot sticker"
-              className="w-16 sm:w-20 lg:w-24 h-auto drop-shadow-[0_12px_24px_rgba(0,0,0,0.16)] pointer-events-none"
+              className="w-18 sm:w-22 lg:w-26 h-auto drop-shadow-[0_15px_30px_rgba(0,0,0,0.18)] pointer-events-none"
             />
           </motion.div>
 
